@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodies Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">🍴 Foodies Hub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#whychoose">Why Choose Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#thankyou">Thank You</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-section d-flex align-items-center justify-content-center text-center">
+  <div class="text-white">
+    <h1 class="display-4 fw-bold">Welcome to Foodies Hub</h1>
+    <p class="lead">Your favorite meals, fresh and tasty!</p>
+    <a href="#menu" class="btn btn-warning btn-lg mt-3">Explore Menu</a>
+  </div>
+</section>
+<!-- Cart Section -->
+<section id="cart" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Your Cart</h2>
+    <ul id="cartItems" class="list-group mb-3">
+      <!-- Items will be injected here -->
+    </ul>
+    <div class="d-flex justify-content-between align-items-center">
+      <strong>Total: $<span id="cartTotal">0.00</span></strong>
+      <button id="orderNowBtn" class="btn btn-success">Order Now</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Menu Section -->
+<section id="menu" class="container py-5">
+  <h2 class="text-center mb-5">🍔 Our Special Menu</h2>
+  <div class="row g-4">
+    <!-- Veg Starters -->
+    <div class="col-md-4">
+      <div class="category-card p-3 border rounded shadow-sm text-center">
+        <img src="images\Veg starters.jpg" alt="Veg Starters" class="img-fluid rounded">
+        <h4>Veg Starters</h4>
+        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#vegStartersModal">View Items</button>
+      </div>
+    </div>
+
+    <!-- Non-Veg Starters -->
+    <div class="col-md-4">
+      <div class="category-card p-3 border rounded shadow-sm text-center">
+        <img src="images\Non-veg starters.jpg" alt="Non-Veg Starters" class="img-fluid rounded">
+        <h4>Non-Veg Starters</h4>
+        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#nonVegStartersModal">View Items</button>
+      </div>
+    </div>
+
+    <!-- Soups -->
+    <div class="col-md-4">
+      <div class="category-card p-3 border rounded shadow-sm text-center">
+        <img src="images\soupss.jpg" alt="Soups" class="img-fluid rounded">
+        <h4>Soups</h4>
+        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#soupsModal">View Items</button>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="col-md-4">
+      <div class="category-card p-3 border rounded shadow-sm text-center">
+        <img src="images\Desserts.jpg"alt="Desserts" class="img-fluid rounded">
+        <h4>Desserts</h4>
+        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#dessertsModal">View Items</button>
+      </div>
+    </div>
+
+    <!-- Drinks -->
+    <div class="col-md-4">
+      <div class="category-card p-3 border rounded shadow-sm text-center">
+        <img src="images\Drinks.jpg" alt="Drinks" class="img-fluid rounded">
+        <h4>Drinks</h4>
+        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#drinksModal">View Items</button>
+      </div>
+    </div>
+
+    <!-- Snacks -->
+    <div class="col-md-4">
+      <div class="category-card p-3 border rounded shadow-sm text-center">
+        <img src="images\snacks.jpg" alt="Snacks" class="img-fluid rounded">
+        <h4>Snacks</h4>
+        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#snacksModal">View Items</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modals Section -->
+<!-- Example: Veg Starters Modal -->
+<div class="modal fade" id="vegStartersModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Veg Starters</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-6 col-md-4">
+            <img src="images\paneer tikka.jpg" class="img-fluid rounded" alt="Paneer Tikka">
+            <p>Paneer Tikka - $5 <button class="btn btn-sm btn-warning add-to-cart" data-item="Paneer Tikka" data-price="5">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\veg spring roll.jpg" class="img-fluid rounded" alt="Veg Spring Roll">
+            <p>Veg Spring Roll - $4 <button class="btn btn-sm btn-warning add-to-cart" data-item="Veg Spring Roll" data-price="4">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\veg pakora.jpg" class="img-fluid rounded" alt="Veg Pakora">
+            <p>Veg Pakora - $3 <button class="btn btn-sm btn-warning add-to-cart" data-item="Veg Pakora" data-price="3">Add</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Repeat similar modals for Non-Veg Starters, Soups, Desserts, Drinks, Snacks -->
+ <!-- Non-Veg Starters Modal -->
+<div class="modal fade" id="nonVegStartersModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Non-Veg Starters</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-6 col-md-4">
+            <img src="images\chicken wings.jpg" class="img-fluid rounded" alt="Chicken Wings">
+            <p>Chicken Wings - $6 <button class="btn btn-sm btn-warning add-to-cart" data-item="Chicken Wings" data-price="6">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\fish fry.jpg" class="img-fluid rounded" alt="Fish Fry">
+            <p>Fish Fry - $7 <button class="btn btn-sm btn-warning add-to-cart" data-item="Fish Fry" data-price="7">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\mutton kebab.jpg" class="img-fluid rounded" alt="Mutton Kebab">
+            <p>Mutton Kebab - $8 <button class="btn btn-sm btn-warning add-to-cart" data-item="Mutton Kebab" data-price="8">Add</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Soups Modal -->
+<div class="modal fade" id="soupsModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Soups</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-6 col-md-4">
+            <img src="images\TomatoSoup.jpg" class="img-fluid rounded" alt="Tomato Soup">
+            <p>Tomato Soup - $3 <button class="btn btn-sm btn-warning add-to-cart" data-item="Tomato Soup" data-price="3">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\clear soup.jpg" class="img-fluid rounded" alt="Veg Clear Soup">
+            <p>Veg Clear Soup - $4 <button class="btn btn-sm btn-warning add-to-cart" data-item="Veg Clear Soup" data-price="4">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\chicken soup.jpg" class="img-fluid rounded" alt="Chicken Soup">
+            <p>Chicken Soup - $5 <button class="btn btn-sm btn-warning add-to-cart" data-item="Chicken Soup" data-price="5">Add</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Desserts Modal -->
+<div class="modal fade" id="dessertsModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Desserts</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-6 col-md-4">
+            <img src="images\chocolate cake.jpg" class="img-fluid rounded" alt="Chocolate Cake">
+            <p>Chocolate Cake - $5 <button class="btn btn-sm btn-warning add-to-cart" data-item="Chocolate Cake" data-price="5">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\ice cream.jpg" class="img-fluid rounded" alt="Ice Cream">
+            <p>Ice Cream - $3 <button class="btn btn-sm btn-warning add-to-cart" data-item="Ice Cream" data-price="3">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\fruit tart.jpg" class="img-fluid rounded" alt="Fruit Tart">
+            <p>Fruit Tart - $4 <button class="btn btn-sm btn-warning add-to-cart" data-item="Fruit Tart" data-price="4">Add</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Drinks Modal -->
+<div class="modal fade" id="drinksModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Drinks</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-6 col-md-4">
+            <img src="images\coke.jpg" class="img-fluid rounded" alt="Coke">
+            <p>Coke - $2 <button class="btn btn-sm btn-warning add-to-cart" data-item="Coke" data-price="2">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\orange juice.jpg" class="img-fluid rounded" alt="Orange Juice">
+            <p>Orange Juice - $3 <button class="btn btn-sm btn-warning add-to-cart" data-item="Orange Juice" data-price="3">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\lemonade.jpg" class="img-fluid rounded" alt="Lemonade">
+            <p>Lemonade - $2 <button class="btn btn-sm btn-warning add-to-cart" data-item="Lemonade" data-price="2">Add</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Snacks Modal -->
+<div class="modal fade" id="snacksModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Snacks</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-6 col-md-4">
+            <img src="images\french fries.jpg"class="img-fluid rounded" alt="French Fries">
+            <p>French Fries - $3 <button class="btn btn-sm btn-warning add-to-cart" data-item="French Fries" data-price="3">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\nachos.jpg" class="img-fluid rounded" alt="Nachos">
+            <p>Nachos - $4 <button class="btn btn-sm btn-warning add-to-cart" data-item="Nachos" data-price="4">Add</button></p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="images\samosa.jpg"class="img-fluid rounded" alt="Samosa">
+            <p>Samosa - $2 <button class="btn btn-sm btn-warning add-to-cart" data-item="Samosa" data-price="2">Add</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Why Choose Us Section -->
+<section id="whychoose" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Why Choose Foodies Hub?</h2>
+    <div class="row text-center">
+      <div class="col-md-4 mb-3">
+        <i class="bi bi-bag-check fs-1 text-warning"></i>
+        <h5 class="mt-2">Fresh Ingredients</h5>
+        <p>Only the freshest ingredients, sourced daily for amazing taste.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <i class="bi bi-heart fs-1 text-danger"></i>
+        <h5 class="mt-2">Made with Love</h5>
+        <p>Every dish prepared with care and passion for your satisfaction.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <i class="bi bi-clock-history fs-1 text-success"></i>
+        <h5 class="mt-2">Fast Delivery</h5>
+        <p>Enjoy hot meals delivered quickly to your doorstep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Thank You Section -->
+<section id="thankyou" class="py-5 text-center bg-dark text-white">
+  <h2>Thank You!</h2>
+  <p>We hope you enjoyed exploring our delicious menu. 🍔🍕🥗</p>
+</section>
+
+<!-- Footer / Social Media -->
+<footer class="bg-dark text-white text-center py-4">
+  <p>Follow us on:
+    <i class="bi bi-facebook mx-1"></i>
+    <i class="bi bi-instagram mx-1"></i>
+    <i class="bi bi-twitter mx-1"></i>
+  </p>
+  <p>&copy; 2025 Foodies Hub | Made with ❤</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
